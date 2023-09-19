@@ -1,0 +1,166 @@
+/*
+ * Você usa rem e em para icones, texto...
+ * Você usar vw e vh para conteiners, divs, sections...
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5em;
+    background-color: #333;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    font-size: 1em;
+}
+
+.cabecalho-logo-informacoes {
+    display: flex;
+    gap: 1em;
+    color: #fff;
+    align-items: center;
+}
+
+.cabecalho-navegacao {
+    display: flex;
+}
+
+.cabecalho-navegacao-lista {
+    display: flex;
+    gap: 5em;
+    align-items: center;
+    list-style: none;
+}
+
+.cabecalho-navegacao-lista li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.cabecalho-navegacao-lista li a:hover {
+    text-decoration: underline;
+}
+
+.cabecalho-navegacao-lista-mobile {
+    display: none;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.principal section {
+    width: 98vw;
+    height: 100vh;
+    color: #333;
+}
+
+.principal-quem-somos {
+    margin-top: 1em;
+}
+
+.principal-servicos {
+    margin-top: 6em;
+}
+
+.principal-contato {
+    margin-top: 6em;
+}
+
+#promocao {
+    color: #333;
+    background-color: #ec4a4a;
+    text-align: center;
+    padding: 1em;
+}
+
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    padding: 2.5em;
+    font-size: 1em;
+}
+
+.rodape-informacoes-adicionais {
+    display: flex;
+    gap: 1em;
+    color: #fff;
+    align-items: center;
+}
+
+.rodape-redes-sociais {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodape-redes-sociais div {
+    display: flex;
+    gap: 0.1em;
+    align-items: center;
+}
+
+#instagram {
+    width: 4em;
+}
+
+#linkedin {
+    width: 2em;
+}
+
+@media screen and (max-width: 768px) {
+    .cabecalho-navegacao {
+        display: none;
+    }
+
+    .cabecalho {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+    }
+
+    .cabecalho-navegacao-lista-mobile {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+    }
+
+    .cabecalho-navegacao-lista-mobile ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        list-style: none;
+    }
+
+    .cabecalho-navegacao-lista-mobile ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .principal-quem-somos {
+        margin-top: 1em;
+    }
+
+    .principal-servicos {
+        margin-top: 13em;
+    }
+
+    .principal-contato {
+        margin-top: 13em;
+    }
+}
