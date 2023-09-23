@@ -3,6 +3,7 @@
  * Você usar vw e vh para conteiners, divs, sections...
 */
 
+/*Zerando tudo*/
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +11,8 @@
     scroll-behavior: smooth;
 }
 
+/*Cabecalho, contendo edições básicas de flex-box. Na aula foi apresentado o position sticky,
+ *usado aqui para fixar o cabeçalho ao scroolar*/
 .cabecalho {
     display: flex;
     justify-content: space-around;
@@ -21,6 +24,7 @@
     font-size: 1em;
 }
 
+/*Ajuste de logomarca com a descrição, display flex, alinhamento e gap*/
 .cabecalho-logo-informacoes {
     display: flex;
     gap: 1em;
@@ -28,10 +32,12 @@
     align-items: center;
 }
 
+/*Configuração do cabeçalho de navegação para flex*/
 .cabecalho-navegacao {
     display: flex;
 }
 
+/*Configuração da lista de itens de navegação para flex*/
 .cabecalho-navegacao-lista {
     display: flex;
     gap: 5em;
@@ -39,19 +45,23 @@
     list-style: none;
 }
 
+/*Edição dos links para perderem formatação padrão*/
 .cabecalho-navegacao-lista li a {
     text-decoration: none;
     color: #fff;
 }
 
+/*Configuração para quando os links estiverem com cursor em cima*/
 .cabecalho-navegacao-lista li a:hover {
     text-decoration: underline;
 }
 
+/*Lista de navegação que vai aparecer ao deixar o layout em mobile*/
 .cabecalho-navegacao-lista-mobile {
     display: none;
 }
 
+/*Display flex column para o conteúdo do site*/
 .principal {
     display: flex;
     flex-direction: column;
@@ -59,6 +69,7 @@
     gap: 1.5em;
 }
 
+/*Todas as sections com tamanhos em vw e vh definidos*/
 .principal section {
     width: 98vw;
     height: 100vh;
@@ -77,6 +88,7 @@
     margin-top: 6em;
 }
 
+/*Configuração da promoção, veja que ela não tem o position sticky, apenas o cabeçalho. Por isso ela desaparece depois*/
 #promocao {
     color: #333;
     background-color: #ec4a4a;
@@ -122,10 +134,12 @@
 }
 
 @media screen and (max-width: 768px) {
+    /*Menu padrão desaparece*/
     .cabecalho-navegacao {
         display: none;
     }
 
+    /*Configuração do menu muda para flex column*/
     .cabecalho {
         display: flex;
         flex-direction: column;
@@ -133,12 +147,13 @@
         align-items: center;
     }
 
+    /*Configuração flex column da nav de navegação mobile*/
     .cabecalho-navegacao-lista-mobile {
         display: flex;
         flex-direction: column;
         background-color: #333;
     }
-
+    /*Configuração flex column da lista ul de navegação mobile*/
     .cabecalho-navegacao-lista-mobile ul {
         display: flex;
         flex-direction: column;
@@ -147,11 +162,12 @@
         list-style: none;
     }
 
+    /*Configuração dos links de acesso na lista*/
     .cabecalho-navegacao-lista-mobile ul li a {
         color: #fff;
         text-decoration: none;
     }
-
+    /*Ajustes no topo das sections para encaixe no layout mobile*/
     .principal-quem-somos {
         margin-top: 1em;
     }
