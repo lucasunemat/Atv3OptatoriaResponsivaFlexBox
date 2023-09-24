@@ -1,14 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Montserrat:wght@300;400&family=Righteous&family=Roboto:ital,wght@0,400;1,100&family=Sarala&display=swap');
 /*
  * Você usa rem e em para icones, texto...
  * Você usar vw e vh para conteiners, divs, sections...
 */
 
-/*Zerando tudo*/
+/*Zerando tudo e colocando comportamento de scroolagem suave na tela*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+body {
+    background-color: #2d7983;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*Cabecalho, contendo edições básicas de flex-box. Na aula foi apresentado o position sticky,
@@ -17,11 +28,12 @@
     display: flex;
     justify-content: space-around;
     padding: 1.5em;
-    background-color: #333;
+    background-color: #2c5e65;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     font-size: 1em;
+    font-family: 'Inter', sans-serif;
 }
 
 /*Ajuste de logomarca com a descrição, display flex, alinhamento e gap*/
@@ -30,6 +42,7 @@
     gap: 1em;
     color: #fff;
     align-items: center;
+    font-weight: 700;
 }
 
 /*Configuração do cabeçalho de navegação para flex*/
@@ -49,11 +62,14 @@
 .cabecalho-navegacao-lista li a {
     text-decoration: none;
     color: #fff;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
 }
 
 /*Configuração para quando os links estiverem com cursor em cima*/
 .cabecalho-navegacao-lista li a:hover {
-    text-decoration: underline;
+    color: #fff;
+    background-color: #47c6d6;
 }
 
 /*Lista de navegação que vai aparecer ao deixar o layout em mobile*/
@@ -71,21 +87,155 @@
 
 /*Todas as sections com tamanhos em vw e vh definidos*/
 .principal section {
-    width: 98vw;
-    height: 100vh;
+    width: 80vw;
+    height: 70vh;
     color: #333;
+    display: flex;
+    align-items: center;
 }
 
 .principal-quem-somos {
-    margin-top: 1em;
+    margin-top: 6em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: -3em;
+}
+
+.principal-quem-somos div {
+    width: 40vw;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    font-family: Inter, sans-serif;
+    margin-bottom: 5em;
+}
+
+.principal-quem-somos div h1 {
+    color: #fff;
+    margin-bottom: 1em;
+    align-self: normal;
+}
+
+.principal-quem-somos div p {
+    color: #fff;
+    font-size: 1em;
+    text-align: justify;
+    margin-bottom: 1em;
+}
+
+#imagem-principal-quem-somos {
+    width: 25vw;
 }
 
 .principal-servicos {
     margin-top: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10em;
+    margin-bottom: -3em;
+}
+
+.principal-servicos div {
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 1em;
+    color: #fff;
+    font-family: Inter, sans-serif;
+}
+
+.principal-servicos div h1 {
+    color: #fff;
+    margin-bottom: 1em;
+    align-self: normal;
+}
+
+.principal-servicos button {
+    background-color: #fff;
+    color: #244d52;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.5em;
+    font-size: 1em;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 15em;
+    margin-top: 1em;
+}
+
+.principal-servicos button:hover {
+    background-color: #25D366;
+    color: #fff;
+}
+
+.principal-servicos button a {
+    text-decoration: none;
+    color: #244d52
+}
+
+#principal-servicos-imagem {
+    width: 30vw;
 }
 
 .principal-contato {
-    margin-top: 6em;
+    height: 5vh;
+    margin-top: 10em;
+    margin-bottom: -10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Inter, sans-serif;
+}
+
+.principal-contato div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    width: 40vw;
+    gap: 1em;
+}
+
+.principal-contato div h1 {
+    color: #fff;
+    margin-bottom: 1em;
+    align-self: center;
+}
+
+.principal-contato div p {
+    text-align: center;
+    font-size: 1em;
+}
+
+.principal-contato button {
+    background-color: #fff;
+    color: #244d52;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.5em;
+    font-size: 1em;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 15em;
+    margin-top: 1em;
+}
+
+.principal-contato button:hover {
+    background-color: #25D366;
+    color: #fff;
+}
+
+.principal-contato button a {
+    text-decoration: none;
+    color: #244d52;
 }
 
 /*Configuração da promoção, veja que ela não tem o position sticky, apenas o cabeçalho. Por isso ela desaparece depois*/
@@ -94,13 +244,19 @@
     background-color: #ec4a4a;
     text-align: center;
     padding: 1em;
+    font-size: large;
+}
+
+#promocao b:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .rodape {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #333;
+    background-color: #2a494d;
     padding: 2.5em;
     font-size: 1em;
 }
@@ -134,6 +290,12 @@
 }
 
 @media screen and (max-width: 768px) {
+    .principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     /*Menu padrão desaparece*/
     .cabecalho-navegacao {
         display: none;
@@ -147,19 +309,34 @@
         align-items: center;
     }
 
+    .cabecalho-logo-informacoes{
+        padding: 1em;
+        border-bottom: 1px solid #fff;
+    }
+
     /*Configuração flex column da nav de navegação mobile*/
     .cabecalho-navegacao-lista-mobile {
         display: flex;
         flex-direction: column;
-        background-color: #333;
+        background-color: #2c5e65;
     }
+
     /*Configuração flex column da lista ul de navegação mobile*/
     .cabecalho-navegacao-lista-mobile ul {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1em;
+        gap: 0.1em;
         list-style: none;
+    }
+
+    .cabecalho-navegacao-lista-mobile ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.2em;
+        background-color: #2c5e65;
+        width: 100vw;
     }
 
     /*Configuração dos links de acesso na lista*/
@@ -167,16 +344,117 @@
         color: #fff;
         text-decoration: none;
     }
+
     /*Ajustes no topo das sections para encaixe no layout mobile*/
     .principal-quem-somos {
-        margin-top: 1em;
+        margin-top: 7em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .principal-quem-somos div {
+        width: 80vw;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Inter, sans-serif;
+    }
+
+    .principal-quem-somos div h1 {
+        align-self: center;
+    }
+
+    #imagem-principal-quem-somos {
+        width: 70vw;
+        margin-top: -4em;
     }
 
     .principal-servicos {
         margin-top: 13em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .principal-servicos div {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1em;
+        color: #fff;
+        font-family: Inter, sans-serif;
+    }
+
+    .principal-servicos div h1 {
+        align-self: center;
+    }
+
+    .principal-servicos div button {
+        width: 50vw;
+    }
+
+    #principal-servicos-imagem {
+        width: 70vw;
+        margin-top: -6em;
     }
 
     .principal-contato {
-        margin-top: 13em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 14em;
+        margin-bottom: -10em;
+    }
+
+    .principal-contato div {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1em;
+        color: #fff;
+        font-family: Inter, sans-serif;
+    }
+
+    .rodape {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .rodape-informacoes-adicionais {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .rodape-informacoes-adicionais div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodape-redes-sociais{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    .rodape-redes-sociais p{
+        align-self: center;
+        text-align: center;
+    }
+
+    .rodape-redes-sociais div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
